@@ -55,3 +55,5 @@
 
 (after! cider
   (set-popup-rule! "^\\*cider-repl" :side 'right :size 0.5))
+
+(toggle-frame-fullscreen)
