@@ -56,4 +56,19 @@
 (after! cider
   (set-popup-rule! "^\\*cider-repl" :side 'right :size 0.5))
 
+(after! smartparens
+  (define-key smartparens-mode-map (kbd "M-j") #'sp-forward-sexp)
+  (define-key smartparens-mode-map (kbd "M-k") #'sp-backward-sexp)
+  (define-key global-map (kbd "M-l") #'sp-down-sexp) ; by default in global map M-l -> to lowercase
+  (define-key smartparens-mode-map (kbd "M-;") #'sp-up-sexp)
+  (define-key smartparens-mode-map (kbd "M-h") #'sp-backward-up-sexp)
+  (define-key smartparens-mode-map (kbd "M-n") #'sp-backward-down-sexp)
+
+  (when IS-MAC
+    (define-key smartparens-mode-map (kbd "s-K") #'sp-forward-slurp-sexp)
+    (define-key smartparens-mode-map (kbd "s-J") #'sp-forward-barf-sexp))
+
+  (unless IS-MAC
+    (define-key smartparens-mode-map (kbd "C-K") #'sp-forward-slurp-sexp)))
+
 (toggle-frame-fullscreen)
