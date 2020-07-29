@@ -7,6 +7,13 @@ Install clojure-lsp
 https://github.com/snoe/clojure-lsp
 Add to PATH
 
+Install MarkedJS
+
+https://github.com/hlissner/doom-emacs/blob/develop/modules/lang/markdown/README.org#markedjs
+```
+npm install -g marked
+```
+
 ## For ubuntu
 Install rg binary
 https://github.com/BurntSushi/ripgrep
