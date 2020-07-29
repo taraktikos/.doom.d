@@ -25,5 +25,8 @@ https://github.com/sharkdp/fd
 
 Install graphviz
 
- sudo apt-get install -y graphviz
+sudo apt-get install -y graphviz
 
+Install shellcheck
+
+apt-get install shellcheck
