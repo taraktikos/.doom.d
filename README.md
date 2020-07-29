@@ -16,7 +16,14 @@ npm install -g marked
 
 ## For ubuntu
 Install rg binary
+
 https://github.com/BurntSushi/ripgrep
 
 Install fd binary
+
 https://github.com/sharkdp/fd
+
+Install graphviz
+
+ sudo apt-get install -y graphviz
+
