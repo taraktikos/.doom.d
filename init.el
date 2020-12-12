@@ -39,7 +39,7 @@
        ;;neotree           ; a project drawer, like NERDTree for vim
        ophints           ; highlight the region an operation acts on
        (popup +defaults)   ; tame sudden yet inevitable temporary windows
-       (pretty-code +fira) ; ligatures or substitute text with pretty symbols
+       (ligatures +fira)   ; ligatures or substitute text with pretty symbols
        ;;tabs              ; an tab bar for Emacs
        treemacs            ; a project drawer, like neotree but cooler
        ;;unicode           ; extended unicode support for various languages
@@ -103,6 +103,10 @@
        ;;terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
+
+       :os
+       (:if IS-MAC macos)  ; improve compatibility with macOS
+       ;;tty               ; improve the terminal Emacs experience
 
        :lang
        ;;agda              ; types of types of types of types...
