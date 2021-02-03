@@ -52,3 +52,18 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(use-package! smartparens
+  :init (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
+  :hook ((lisp-mode . smartparens-strict-mode)
+         (clojure-mode . smartparens-strict-mode)
+         (emacs-lisp-mode . smartparens-strict-mode)))
+
+(use-package! aggressive-indent
+  :hook ((lisp-mode . aggressive-indent-mode)
+         (clojure-mode . aggressive-indent-mode)
+         (emacs-lisp-mode . aggressive-indent-mode)))
+
+(after! clojure-mode
+  (setq clojure-indent-style 'align-arguments)
+  (setq clojure-align-forms-automatically t))
