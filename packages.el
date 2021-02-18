@@ -51,3 +51,4 @@
 
 (package! evil-smartparens)
 (package! aggressive-indent)
+(package! feature-mode)

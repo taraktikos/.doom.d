@@ -19,8 +19,8 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
-;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
+(setq doom-font (font-spec :family "Fira Code" :size 16 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Fira Code" :size 16))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -67,3 +67,20 @@
 (after! clojure-mode
   (setq clojure-indent-style 'align-arguments)
   (setq clojure-align-forms-automatically t))
+
+(after! smartparens
+  (define-key smartparens-mode-map (kbd "M-j") #'sp-forward-sexp)
+  (define-key smartparens-mode-map (kbd "M-k") #'sp-backward-sexp)
+  (define-key global-map (kbd "M-l") #'sp-down-sexp) ; by default in global map M-l -> to lowercase
+  (define-key smartparens-mode-map (kbd "M-;") #'sp-up-sexp)
+  (define-key smartparens-mode-map (kbd "M-h") #'sp-backward-up-sexp)
+  (define-key smartparens-mode-map (kbd "M-n") #'sp-backward-down-sexp)
+
+  (when IS-MAC
+    (define-key smartparens-mode-map (kbd "s-K") #'sp-forward-slurp-sexp)
+    (define-key smartparens-mode-map (kbd "s-J") #'sp-forward-barf-sexp))
+
+  (unless IS-MAC
+    (define-key smartparens-mode-map (kbd "C-K") #'sp-forward-slurp-sexp)))
+
+(toggle-frame-fullscreen)
